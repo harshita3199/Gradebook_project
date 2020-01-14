@@ -9,7 +9,7 @@ namespace Gradebook{
         //defining constructor as same name as that of class
         public Book(string name){
             grades= new List<double>();
-            this.name=name;
+            Name=name;
 
         }
 
@@ -54,6 +54,6 @@ namespace Gradebook{
        
        public List<double> grades;   //legally allowed to access the grades class as now it is public.
     //    private List<double> grades;  
-       private string name;   
+       public string Name;   
     }
 }

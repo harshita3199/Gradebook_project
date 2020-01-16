@@ -3,6 +3,14 @@ using Xunit;
 
 namespace Gradebook.test
 {
+    public class Person
+    {
+
+    }
+
+    public struct pointer{
+
+    }
     public class TypeTest
     {
 
@@ -12,11 +20,13 @@ namespace Gradebook.test
             SetInt(ref x);
 
             // Assert.Equal(3, x);
-            Assert.Equal(42, x);
+            Assert.Equal(42, x
+            );
         }
 
-        private void SetInt(ref int z)
+        private void SetInt(ref Int32 z)
         {
+            string s = " ";
             z=42;
         }
 
@@ -64,6 +74,22 @@ namespace Gradebook.test
             book.Name=name;
         }
 
+        [Fact]
+        public void StringBehaveLikeValueTypes()
+        {
+            string name= "Scott";
+            var upper = MakeUppercase(name);
+
+            Assert.Equal("Scott", name);
+            Assert.Equal("SCOTT", upper);
+            
+        }
+
+        private string MakeUppercase(string parameter)
+        {
+            return parameter.ToUpper();
+
+        }
 
         [Fact]
         public void GetBookReturnsDifferentObjects()
